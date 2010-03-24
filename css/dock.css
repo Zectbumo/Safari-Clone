@@ -1,0 +1,107 @@
+/* Author: Alfred L. Morgan */
+
+#dock {
+    /* FIXME: when the mouse leaves the dock the last text fades away */
+    position: fixed;
+    bottom: 0px;
+    white-space: nowrap;
+    -webkit-animation: slideUp .5s linear;
+}
+#dock .plate {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#dock .plate:hover {
+    cursor: row-resize;
+}
+#dock .plate .surface {
+    height: 80px;
+    background-color: #bbb;
+    opacity: .6;
+    -webkit-transform-origin-y: bottom;
+    -webkit-transform: perspective(750) rotateX(45deg);
+}
+#dock .items {
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+}
+#dock .icon {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+    width: 64px;
+    height: 64px;
+}
+#dock .icon img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    -webkit-box-reflect: below -3px -webkit-gradient(linear, left top, left bottom, color-stop(.5, transparent), color-stop(2, white));
+}
+#dock .icon a:active img {
+    opacity: .5;
+}
+#dock .icon > div {
+    position: absolute;
+    display: none;
+    left: 50%;
+    bottom: 78px;
+}
+#dock .icon > div > div {
+    margin-left: -50%;
+}
+#dock .icon span {
+    /* TODO: Add triangle to bottom of hover text bubble */
+    white-space: nowrap;
+    background-color: rgba(30,30,30,.5);
+    padding: 1px 9px 1px 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+}
+#dock .icon a {
+    cursor: default;
+}
+#dock .icon a:hover + div {
+    display: block;
+}
+#dock .items:first-child .icon:first-child {
+    margin-left: 25px;
+}
+#dock .items:last-child .icon:last-child {
+    margin-right: 25px;
+}
+#dock .separator {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    margin: 11px 3px;
+    width: 22px;
+    opacity: .7;
+    height: 102px;
+    -webkit-transform-origin-y: bottom;
+    -webkit-transform: perspective(15) rotateX(11deg);
+}
+#dock .separator div {
+    background-color: white;
+    height: 6px;
+    margin: 7px 0;
+    opacity: .38;
+}
+@-webkit-keyframes slideUp {
+  from {
+      bottom: -150px;
+  }
+  to {
+      bottom: 0;
+  }
+}

@@ -34,7 +34,7 @@
 #dock .icon {
     display: inline-block;
     position: relative;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     width: 64px;
     height: 64px;
 }
@@ -47,17 +47,16 @@
 #dock .icon a:active img {
     opacity: .5;
 }
-#dock .icon > div {
+#dock .icon > .label {
     position: absolute;
     display: none;
     left: 50%;
-    bottom: 78px;
+    bottom: 95px;
 }
-#dock .icon > div > div {
+#dock .icon > .label > div {
     margin-left: -50%;
 }
 #dock .icon span {
-    /* TODO: Add triangle to bottom of hover text bubble */
     white-space: nowrap;
     background-color: rgba(30,30,30,.5);
     padding: 1px 9px 1px 10px;
@@ -96,6 +95,16 @@
     height: 6px;
     margin: 7px 0;
     opacity: .38;
+}
+#dock .icon.active .dot {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    bottom: 0px;
+    left: 16px;
+    background-image: -webkit-gradient(radial, 16 17, 2, 16 17, 7, from(white), color-stop(0.5, rgb(128, 188, 233)), to(transparent));
+    -webkit-transform-origin-y: bottom;
+    -webkit-transform: translateZ(54px) perspective(750) rotateX(60deg);
 }
 @-webkit-keyframes slideUp {
   from {

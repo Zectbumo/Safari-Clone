@@ -186,6 +186,21 @@
 			-webkit-border-bottom-left-radius: 4px;
 		}
 		
+		/* Reload Button */
+		.reload {
+			-webkit-transform: rotate(50deg);
+			position: absolute;
+			top:5px;
+			left: 657px;
+			width: 28px;
+			font-family: "Menlo", "Arial";
+			font-size: 21px;
+			line-height:1.05;
+			border:none;
+			background:transparent;
+			color:#444;
+		}
+		
 		.chrome input[type="text"],
 		.chrome input[type="search"] {
 			height: 20px;
@@ -366,6 +381,7 @@
 				</div>
 				<div class="bookmark button">+</div>
 				<input type="text" class="url" value="http://localhost/">
+				<div class="reload">↻</div>
 				<input type="search" results="5" placeholder="Google">
 				<div class="bookmarks-bar">
 					<ul>

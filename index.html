@@ -34,7 +34,7 @@
       });
       
       $('#urlBarForm').submit(function() {
-        changeURL($('#urlBarInput').attr('value', url));
+        changeURL($('#urlBarInput').val());
         return false;
       });
       
@@ -444,7 +444,7 @@
 			</div>
 		</div>
 		<div class="viewport"> 
-			<iframe src="http://localhost" width="100%" height="99%" id="viewportframe" />
+			<iframe src="http://localhost" width="100%" height="99%" id="viewportframe"></iframe>
 		</div>
 	</div>
 

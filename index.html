@@ -41,6 +41,15 @@
       $('.reload').bind('click', function() {
         changeURL(currentURL);
       });
+
+      $('#searchForm').submit(function() {
+        var query = $('#searchInput').val();
+        var newQuery = query.split(" ").join("+");
+        var googleUrl = "http://www.google.com/search?q=";
+        changeURL( googleUrl + newQuery );
+        return false;
+      });      
+
             
     });
     
@@ -433,7 +442,9 @@
 				<form action="#" method="post" id="urlBarForm">
   				<input type="text" class="url" value="http://localhost/" id="urlBarInput">
 	      </form>  
-				<input type="search" placeholder="Google">
+	      <form action="#" method="post" id="searchForm">
+				  <input type="search" placeholder="Google" id="searchInput">
+				</form
 				<div class="bookmarks-bar">
 					<ul>
 						<li><a href="http://general-metrics.com/" class="changeURL">General Metrics</a></li>
